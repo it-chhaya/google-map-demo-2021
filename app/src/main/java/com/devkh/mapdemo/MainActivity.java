@@ -27,7 +27,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements LocationListener {
+public class MainActivity extends AppCompatActivity {
 
     private Button mBtnDirection;
 
@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             e.printStackTrace();
         }
 
-        mBtnDirection = findViewById(R.id.btn_direction);
 
+        /*
         mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         mIsGPSEnabled = mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         mIsNetworkEnabled = mLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             Log.i("TAG", "onCreate: " + lat);
             Log.i("TAG", "onCreate: " + lon);
         }
+        */
 
         // bind event
         getDirection();
@@ -76,23 +77,24 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     }
 
     private void getDirection() {
+        mBtnDirection = findViewById(R.id.btn_direction);
         mBtnDirection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Get direction with Google Map App
-                /*Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/dir/?api=1&destination=11.575985764067013,104.88940561703062");
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                mapIntent.setPackage("com.google.android.apps.maps");
-                startActivity(mapIntent);*/
+                // Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/dir/?api=1&destination=11.575985764067013,104.88940561703062");
+                // Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                // mapIntent.setPackage("com.google.android.apps.maps");
+                // startActivity(mapIntent);
 
-                Intent intent = new Intent(MainActivity.this, PitchesActivity.class);
-                //intent.putExtra("lat", m);
+                Intent intent = new Intent(MainActivity.this, PitchNearByActivity.class);
+                // intent.putExtra("lat", m);
                 startActivity(intent);
             }
         });
     }
 
-
+    /*
     @Override
     public void onLocationChanged(@NonNull Location location) {
         Log.i("TAG", "onLocationChanged: " + location.getLatitude());
@@ -117,5 +119,5 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     @Override
     public void onProviderDisabled(@NonNull String provider) {
 
-    }
+    }*/
 }

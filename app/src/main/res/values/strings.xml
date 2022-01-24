@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MapDemo</string>
+    <string name="app_name">NearBy</string>
     <string name="map_id">746435e332ded602</string>
     <string name="title_activity_pitches">PitchesActivity</string>
 </resources>

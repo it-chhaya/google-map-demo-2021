@@ -5,12 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="24dp"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btn_direction"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="KSHRD"/>
+        android:backgroundTint="#EF9A9A"
+        android:text="Near By Location"/>
 
 </LinearLayout>
